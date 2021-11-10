@@ -27,7 +27,7 @@ export const ClaseDos = () => {
 
   return (
     <>
-      <p>El numero mayor es: {mayor(2, 1)}</p>
+      <p>El numero mayor es a: {mayor(2, 1)}</p>
     </>
   );
 };
