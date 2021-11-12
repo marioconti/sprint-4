@@ -4,7 +4,7 @@ import "./App.css";
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
+import { getFirestore, collection, getDocs, doc} from "firebase/firestore/lite";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -34,9 +34,10 @@ function App() {
     async function getTweets(db) {
       const tweetsCol = collection(db, "tweets");
       const tweetsSnapshot = await getDocs(tweetsCol);
-      const tweetsList = tweetsSnapshot.docs.map((doc) => doc.data());
+      const tweetsList = tweetsSnapshot.docs.map((doc) => {
+        return {...doc.data()}});
       setTweets(tweetsList);
-      // console.log(tweetsList);
+      console.log(tweetsList);
       return tweetsList;
     }
     getTweets(db);
@@ -75,6 +76,8 @@ function App() {
   };
 
   console.log(tweet);
+
+
 
   return (
     <div className="App">
