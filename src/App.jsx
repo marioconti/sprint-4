@@ -44,7 +44,7 @@ function App() {
   }, []);
   // console.log(tweets);
 
-  // =======================================
+  // ========================================
   // OPCION FACIL
   // const handleTweetChange = (e) => {
   //   let nuevoTweet = {
