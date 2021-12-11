@@ -5,5 +5,5 @@ export const esImpar = (number) => {
   if (typeof number !== "number") {
     return "Debes ingresar un valor que sea del tipo numérico";
   }
-  return number % 2 === 0;
+  return number % 2 !== 0;
 };
